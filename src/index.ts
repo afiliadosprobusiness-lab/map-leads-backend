@@ -294,6 +294,11 @@ app.post("/api/run-apify-search", async (req, res) => {
   const user = await requireAuthenticatedUser(req, res);
   if (!user) return;
 
+  if ((user.email ?? "").toLowerCase() === SUPERADMIN_EMAIL) {
+    sendError(res, 403, "Superadmin cannot run searches");
+    return;
+  }
+
   const payload = req.body as RunSearchInput;
   const searchId = payload.search_id;
 

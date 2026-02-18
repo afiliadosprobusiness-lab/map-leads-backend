@@ -53,7 +53,7 @@ All error responses use:
 - Error cases:
 - `400` when `search_id` is missing/invalid
 - `401` unauthorized or invalid token
-- `403` suspended account
+- `403` suspended account or superadmin requester
 - `404` search not found or not owned by requester
 - `429` leads quota exceeded
 - `500` unexpected/internal error
@@ -170,3 +170,4 @@ All error responses use:
 ## Contract Changelog
 
 - 2026-02-18: Initial contract created from current implementation. Type: non-breaking. Impact: documentation only.
+- 2026-02-18: `run-apify-search` now blocks superadmin requester accounts. Type: non-breaking. Impact: superadmin role restricted to user management.

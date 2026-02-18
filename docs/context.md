@@ -55,6 +55,7 @@ Current design is a single-module service (no layered folders yet).
 - `growth`: 5000
 - `pro`: 15000
 - Suspended users cannot run searches.
+- Superadmin requester cannot run searches.
 - If `APIFY_TOKEN` is missing, search endpoint runs in demo mode using mock leads.
 - For `growth` and `pro`, system tries basic email enrichment from website HTML.
 
